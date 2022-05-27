@@ -3,6 +3,11 @@
 
 This is the C++ version of [frc-characterization](https://github.com/wpilibsuite/frc-characterization). It uses the [wpimath](https://github.com/wpilibsuite/allwpilib/tree/main/wpimath) backend for generating feedforward and feedback gains.
 
+## This is a custom version of sysid for frc team 1155 to include only CTRE and REV dependancies
+Changes are based off [modelmat](https://github.com/modelmat/sysid/tree/ctre-only).
+This is to prevent a bug with sysid where the vendor deps prevent the program from doing anything once deployed.
+We only include vendor deps for REV and CTRE since those are the ones our 2022 robot uses.
+
 ## Supported Vendor Hardware
 
 This is a list of the vendors that are currently supported by SysId for 2022:
