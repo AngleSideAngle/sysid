@@ -6,7 +6,6 @@
 
 #include <stdexcept>
 
-#include <CANVenom.h>
 #include <fmt/core.h>
 #include <frc/ADXRS450_Gyro.h>
 #include <frc/AnalogGyro.h>
