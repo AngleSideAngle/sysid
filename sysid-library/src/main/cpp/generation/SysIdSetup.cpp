@@ -93,13 +93,13 @@ void AddMotorController(
     sparkMax->SetInverted(inverted);
     sparkMax->SetIdleMode(rev::CANSparkMax::IdleMode::kBrake);
   } else if (controller == "Venom") {
-    fmt::print("Setup Venom\n");
-    controllers->emplace_back(std::make_unique<frc::CANVenom>(port));
+    // fmt::print("Setup Venom\n");
+    // controllers->emplace_back(std::make_unique<frc::CANVenom>(port));
 
-    auto* venom = static_cast<frc::CANVenom*>(controllers->back().get());
+    // auto* venom = static_cast<frc::CANVenom*>(controllers->back().get());
 
-    venom->SetInverted(inverted);
-    venom->SetBrakeCoastMode(frc::CANVenom::BrakeCoastMode::kBrake);
+    // venom->SetInverted(inverted);
+    // venom->SetBrakeCoastMode(frc::CANVenom::BrakeCoastMode::kBrake);
   } else {
     fmt::print("Setup PWM\n");
     controllers->emplace_back(std::make_unique<frc::Spark>(port));
@@ -182,13 +182,13 @@ void SetupEncoders(
       SetupCTREEncoder(controller, feedbackDevice, period, combinedCPR,
                        numSamples, encoderInverted, position, rate);
     } else {  // Venom
-      fmt::print("Setup Built-in+Venom\n");
-      auto* venom = static_cast<frc::CANVenom*>(controller);
-      position = [=] { return venom->GetPosition() / gearing; };
-      rate = [=] {
-        return venom->GetSpeed() / gearing /
-               60;  // Conversion from RPM to rotations per second
-      };
+      // fmt::print("Setup Built-in+Venom\n");
+      // auto* venom = static_cast<frc::CANVenom*>(controller);
+      // position = [=] { return venom->GetPosition() / gearing; };
+      // rate = [=] {
+      //   return venom->GetSpeed() / gearing /
+      //          60;  // Conversion from RPM to rotations per second
+      // };
     }
   } else if (encoderType == "Encoder Port") {
     auto* sparkMax = static_cast<rev::CANSparkMax*>(controller);
