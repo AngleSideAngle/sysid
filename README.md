@@ -15,8 +15,6 @@ This is a list of the vendors that are currently supported by SysId for 2022:
 ### Vendors
 
 - CTRE: TalonSRX, TalonFX, VictorSPX, CANCoder, and Pigeon IMU
-- NavX Gyro (No integration tests)
-- Playing With Fusion Venom
 - REV: SparkMax Motor Controller
 
 ### Hardware Supported by WPILib

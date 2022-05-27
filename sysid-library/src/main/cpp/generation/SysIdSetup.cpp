@@ -13,7 +13,7 @@
 #include <frc/Filesystem.h>
 #include <frc/TimedRobot.h>
 #include <frc/motorcontrol/Spark.h>
-#include <frc/romi/RomiGyro.h>
+// #include <frc/romi/RomiGyro.h>
 #include <units/angle.h>
 #include <units/angular_velocity.h>
 #include <wpi/SmallString.h>
@@ -21,7 +21,7 @@
 #include <wpi/fs.h>
 
 #ifdef __FRC_ROBORIO__
-#include "AHRS.h"
+// #include "AHRS.h"
 #endif
 
 // Based on https://gcc.gnu.org/onlinedocs/cpp/Stringizing.html
@@ -406,29 +406,29 @@ void SetupGyro(
       if (gyroCtor == "SerialPort (USB)") {
         fmt::print("Setup NavX, SerialPort (USB)\n");
 #ifdef __FRC_ROBORIO__
-        gyro = std::make_unique<AHRS>(frc::SerialPort::Port::kUSB);
+        // gyro = std::make_unique<AHRS>(frc::SerialPort::Port::kUSB);
 #endif
       } else if (gyroCtor == "I2C (MXP)") {
         fmt::print("Setup NavX, I2C (MXP)\n");
 #ifdef __FRC_ROBORIO__
-        gyro = std::make_unique<AHRS>(frc::I2C::Port::kMXP);
+        // gyro = std::make_unique<AHRS>(frc::I2C::Port::kMXP);
 #endif
       } else if (gyroCtor == "SerialPort (MXP)") {
         fmt::print("Setup NavX, SerialPort (MXP)\n");
 #ifdef __FRC_ROBORIO__
-        gyro = std::make_unique<AHRS>(frc::SerialPort::Port::kMXP);
+        // gyro = std::make_unique<AHRS>(frc::SerialPort::Port::kMXP);
 #endif
       } else {
         fmt::print("Setup NavX, SPI (MXP)\n");
 #ifdef __FRC_ROBORIO__
-        gyro = std::make_unique<AHRS>(frc::SPI::Port::kMXP);
+        // gyro = std::make_unique<AHRS>(frc::SPI::Port::kMXP);
 #endif
       }
       //     // FIXME: Update Romi Gyro once vendordep is out
     } else if (gyroType == "Romi") {
       fmt::print("Setup Romi\n");
 #ifndef __FRC_ROBORIO__
-      gyro = std::make_unique<frc::RomiGyro>();
+      // gyro = std::make_unique<frc::RomiGyro>();
 #endif
     } else if (gyroType == "Analog Gyro") {
       try {
